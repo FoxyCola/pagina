@@ -14,7 +14,6 @@ export default async function handler(req, res) {
     return res.status(401).json({ success: false, message: 'Credenciales inválidas' });
   }
 
-//  res.status(200).json({ success: true, user });
-  res.status(200).json({token,userId: user._id,username: user.username});
+res.status(200).json({ success: true, user });
 
 }
