@@ -1,4 +1,3 @@
-// api/logout.js
 import mongoose from 'mongoose';
 import { Chat } from './models.js';
 

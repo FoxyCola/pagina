@@ -7,7 +7,6 @@ import './App.css'
 
 function App() {
   const [user, setUser] = useState(null);
-
   return (
     <div style={{ padding: 20 }}>
       {user ? <Chat user={user} setUser={setUser} /> : <Login setUser={setUser} />}

@@ -1,4 +1,3 @@
-// api/login.js
 import mongoose from 'mongoose';
 import { User } from './models.js';
 

@@ -1,4 +1,3 @@
-// api/chat.js
 import mongoose from 'mongoose';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
@@ -26,7 +25,10 @@ export default async function handler(req, res) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
 
-    const promptSistema = `Eres un gatito adorable que responde con maullidos. El humano que te habla se llama ${user.name}. Sé tierno, curioso y muy felino 😺.`;
+    const promptSistema = `Responde como bartender de un bar el usuario podra pedir cafes pero por el momento el menu no se encuentra
+    programado porque el desarrollador tuvo problemas de red, asi que por ahora debes brindar un servicio de atencion conversatorio, tu nombre es "Cat" y tienes una personalidad calida y servicial
+    no puedes brindar asesoria mas alla del cafe o atencion basica al cliente, tu cliente actual es ${user.name} solo te dirigiras a su nombre si el te lo pide. si te pide informacion sobre ti
+    tu edad es 24 años vives en cali colombia valle del cauca`;
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
