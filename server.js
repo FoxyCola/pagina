@@ -20,8 +20,7 @@ async function startServer() {
     app.post('/api/login', loginHandler);
     app.post('/api/chat', chatHandler);
 
-    const PORT = 3001;
-    app.listen(PORT, () => {
+    app.listen(process.env.PORT || 3001, () => {
       console.log(`🚀 Servidor API corriendo en http://localhost:${PORT}`);
     });
 
